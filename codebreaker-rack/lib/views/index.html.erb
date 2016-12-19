@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Codebreaker</title>
+	 <link rel="stylesheet" href="/css/index.css" type="text/css">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="/">Codebreaker</a>
+	    </div>
+
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="/">Game<span class="sr-only">(current)</span></a></li>
+	        <li><a href="/score_table">Score table</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+	<div class="wrapper">
+		<% if game %>
+			<% if guess %>
+				<h2>Your last guess is "<%=guess%>". Attempts lefted <%=game.attempts%>.</h2>	
+				<% if hint && game.hints >= 0	%>
+					<h3>Secret code contain <%=hint%>. <%=game.hints%> hints left.</h3>
+				<% elsif game.hints >= 0 %>
+					<h3>	<%=game.hints%> hints left.</h3>	
+				<% else %>
+					<h3>No more hints left!</h3>
+				<% end %>
+			<% end %>
+
+			<div class="panel panel-default">
+		  	<div class="panel-heading">
+		  		<% if mark %>
+					  <%=mark%>	
+				  <% else %>
+				  	Make a guess.
+				  <% end %>
+		  	</div>
+		  		<div class="panel-body">
+		    		<form class="form-inline" method="post" action="/make_guess">
+							<div class="form-group">
+								<input class="form-control" name="guess" type="text">
+								<button class="btn btn-primary" type="submit">Try</button>
+							</div>
+						</form>
+		  		</div>
+				</div>
+			</div>
+		<% else %>
+			<h2>Welcome to codebreaker</h2>
+			<a href="/start">Crete new game</a>
+		<% end %>
+	</div>
+	
+</body>
+</html>

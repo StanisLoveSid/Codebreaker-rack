@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Codebreaker</title>
+   <link rel="stylesheet" href="/css/index.css" type="text/css">
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Codebreaker</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="/">Game<span class="sr-only">(current)</span></a></li>
+          <li class="active"><a href="/score_table">Score table</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <table class="table table-striped">
+      <tr>
+        <th>Name</th>
+        <th>Victory</th>
+        <th>Attempts</th>
+        <th>Hints</th>
+      </tr>
+    <% load("score.yml").each do |x| %>
+      <tr>
+        <td><%=x[:name]%></td>
+        <td><%=x[:victory]%></td>
+        <td><%=x[:user_attempts_left]%></td>
+        <td><%=x[:user_hints_left]%></td>
+      </tr> 
+    <% end %>
+  </table> 
+
+</body>
+</html>

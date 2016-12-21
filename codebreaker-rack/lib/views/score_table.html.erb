@@ -29,12 +29,12 @@
         <th>Attempts</th>
         <th>Hints</th>
       </tr>
-    <% load("score.yml").each do |x| %>
+    <% load("score.yml").each do |player| %>
       <tr>
-        <td><%=x[:name]%></td>
-        <td><%=x[:victory]%></td>
-        <td><%=x[:user_attempts_left]%></td>
-        <td><%=x[:user_hints_left]%></td>
+        <td><%=player[:name]%></td>
+        <td><%=player[:victory]%></td>
+        <td><%=player[:user_attempts_left]%></td>
+        <td><%=player[:user_hints_left]%></td>
       </tr> 
     <% end %>
   </table> 

@@ -13,6 +13,7 @@ class Racker
 
   def initialize(env)
     @request = Rack::Request.new(env)
+    @request.session[:guesses_history] ||= {}
   end
 
   def response
@@ -20,6 +21,7 @@ class Racker
     when "/" then Rack::Response.new(render("index.html.erb"))
     when "/start" then game_start
     when "/make_guess"  then make_guess
+    when "/get_hint" then get_hint
     when "/save_score" then save_score
     when "/game_over" then game_over
     when "/score_table" then Rack::Response.new(render("score_table.html.erb"))
@@ -40,17 +42,19 @@ class Racker
   end
 
   def make_guess
-    if game.attempts > 0
-      if (@request.params['guess'] == 'hint') && (game.hints > 0)
-        @request.session[:hint] = game.hint
-      else
-        @request.session[:guess] = @request.params['guess']
-        @request.session[:mark] = game.guesser(guess)
-      end
+    if game.attempts >= 1
+      @request.session[:guess] = @request.params['guess']
+      @request.session[:mark] = game.guesser(guess)
+      @request.session[:guesses_history][mark] = guess
       game.win ? redirect_to('/game_over') : redirect_to('/')
     else
       redirect_to('/game_over')
     end
+  end
+
+  def get_hint
+    @request.session[:hint] = game.hint
+    redirect_to('/')
   end
 
   def game

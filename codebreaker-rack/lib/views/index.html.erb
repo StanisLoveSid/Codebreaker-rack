@@ -41,7 +41,7 @@
 					Your last guess is "<%=guess%>".
 					<% end %>
 					<% if game.attempts >= 1 %>
-					Attempts lefted <%=game.attempts%>.
+					Attempts left <%=game.attempts%>.
 					<% else %>
 					You have no attemts.
 					<% end %>
@@ -65,6 +65,7 @@
 							<button class="btn btn-primary" type="submit">Guess</button>
 						</div>
 					</form>
+					<% if game.hints > 0 %>
 					<div class="panel-body">
 						<form class="form-inline" method="post" action="/get_hint">
 							<div class="form-group">
@@ -72,17 +73,18 @@
 							</div>
 						</form>
 					</div>
+					<% end %>
 					<table class="table table-striped">
 						<caption class="text-center">HISTORY OF GUESSES</caption>
 						<tr>
 							<th class="text-center">Guess</th>
 							<th class="text-center">Answer</th>
 						</tr>
-						<% @request.session[:guesses_history].each_pair do |answer, result| %>
+						<% @request.session[:guesses_history].each do |result| %>
 						<tr>
-							<% if result.match(/^[1-6]{4}$/) %>
-							<td><%= result %></td>
-							<td><%= answer %></td>
+							<% if result[1].match(/^[1-6]{4}$/) %>
+							<td><%= result[0] %></td>
+							<td><%= result[1] %></td>
 							<% end %>
 						</tr>
 						<% end %>

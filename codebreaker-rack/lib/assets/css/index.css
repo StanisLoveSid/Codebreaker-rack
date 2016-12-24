@@ -7,3 +7,7 @@
 .wrapper .panel-heading {
   font-size: 28px;
 }
+
+body {
+    background:url(ruby.png);  
+}

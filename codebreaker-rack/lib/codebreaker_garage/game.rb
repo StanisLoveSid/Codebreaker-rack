@@ -17,6 +17,7 @@ module Codebreaker_garage
     end
 
     def guesser(guessed_code)
+      return "You have to use 4 digits from range 1..6" if (guessed_code == "") || !guessed_code.match(/^[1-6]{4}$/)
       @attempts -= 1
       converted = guessed_code.split('').map(&:to_i)
       result = ""

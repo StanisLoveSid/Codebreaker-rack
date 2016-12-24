@@ -13,7 +13,7 @@ class Racker
 
   def initialize(env)
     @request = Rack::Request.new(env)
-    @request.session[:guesses_history] ||= {}
+    @request.session[:guesses_history] ||= []
   end
 
   def response
@@ -45,7 +45,7 @@ class Racker
     if game.attempts >= 1
       @request.session[:guess] = @request.params['guess']
       @request.session[:mark] = game.guesser(guess)
-      @request.session[:guesses_history][mark] = guess
+      @request.session[:guesses_history] << [mark, guess]
       game.win ? redirect_to('/game_over') : redirect_to('/')
     else
       redirect_to('/game_over')

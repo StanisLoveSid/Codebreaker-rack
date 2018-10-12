@@ -1,0 +1,77 @@
+---
+:name: e
+:victory: false
+:user_attempts_left: 9
+:user_hints_left: 0
+:time: 2016-12-19 11:42:00.460638807 +02:00
+:secret_code: "[1, 3, 4, 4]"
+---
+:name: e
+:victory: false
+:user_attempts_left: 9
+:user_hints_left: 0
+:time: 2016-12-19 11:58:37.343527783 +02:00
+:secret_code: "[2, 5, 4, 3]"
+---
+:name: ''
+:victory: false
+:user_attempts_left: 9
+:user_hints_left: 0
+:time: 2016-12-19 11:59:06.360321471 +02:00
+:secret_code: "[1, 5, 4, 5]"
+---
+:name: ''
+:victory: false
+:user_attempts_left: 9
+:user_hints_left: 0
+:time: 2016-12-19 12:14:17.402451897 +02:00
+:secret_code: "[3, 2, 6, 5]"
+---
+:name: weqewqe
+:victory: false
+:user_attempts_left: 9
+:user_hints_left: 0
+:time: 2016-12-19 12:14:52.740946136 +02:00
+:secret_code: "[3, 2, 2, 1]"
+---
+:name: Loller
+:victory: false
+:user_attempts_left: 9
+:user_hints_left: 3
+:time: 2016-12-19 12:17:14.144604862 +02:00
+:secret_code: "[5, 3, 6, 6]"
+---
+:name: ''
+:victory: false
+:user_attempts_left: 9
+:user_hints_left: 3
+:time: 2016-12-19 15:37:29.362367539 +02:00
+:secret_code: "[6, 6, 6, 4]"
+---
+:name: u
+:victory: false
+:user_attempts_left: 9
+:user_hints_left: 3
+:time: 2016-12-19 15:44:42.219656926 +02:00
+:secret_code: "[5, 6, 3, 5]"
+---
+:name: epsilon
+:victory: true
+:user_attempts_left: 4
+:user_hints_left: 0
+:time: 2016-12-19 15:46:10.168289726 +02:00
+:secret_code: "[2, 5, 6, 4]"
+---
+:name: yo
+:victory: true
+:user_attempts_left: 3
+:user_hints_left: 3
+:time: 2016-12-19 15:50:55.731597939 +02:00
+:secret_code: "[2, 6, 2, 6]"
+---
+:name: ''
+:victory: false
+:user_attempts_left: 9
+:user_hints_left: 0
+:time: 2016-12-19 15:53:58.226580729 +02:00
+:secret_code: "[6, 2, 5, 3]"

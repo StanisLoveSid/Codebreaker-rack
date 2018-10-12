@@ -1,0 +1,13 @@
+.wrapper {
+  margin: 50px 20% 0 20%;
+}
+.wrapper .panel-default {
+  text-align: center;
+}
+.wrapper .panel-heading {
+  font-size: 28px;
+}
+
+body {
+    background:url(ruby.png);  
+}
